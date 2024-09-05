@@ -1,0 +1,69 @@
+<% include ./partials/header.ejs%>
+<div class="profile w-full min-h-screen text-white bg-zinc-800 pt-1">
+  <form
+    id="uploadform"
+    hidden
+    action="/fileupload"
+    method="post"
+    enctype="multipart/form-data"
+  >
+    <input type="file" name="image" />
+  </form>
+  <div class="profdets flex flex-col items-center justify-center mt-20">
+    <div class="relative">
+      <span
+        id="uploadicon"
+        class="cursor-pointer w-10 h-10 absolute bottom-0 right-0 rounded-full flex items-center justify-center bg-zinc-200"
+      >
+        <i class="text-zinc-800 text-2xl ri-pencil-fill"></i>
+      </span>
+      <div class="w-32 h-32 bg-zinc-200 rounded-full overflow-hidden">
+        <img
+          class="w-full h-full object-cover"
+          src="/images/uploads/<%= user.profileImage%>"
+          alt=""
+        />
+      </div>
+    </div>
+    <h1 class="text-3xl font-semibold mt-3">Abhishek Singh</h1>
+    <h3 class="text-md">@username</h3>
+    <a
+      href="/edit"
+      class="mt-5 px-7 py-2 font-semibold bg-zinc-700 rounded-full text-xs"
+      >Edit</a
+    >
+    <a
+      href="/add"
+      class="px-10 py-2 rounded-lg bg-red-600 text-xs font-semibold mt-6"
+    >
+      Add New Post
+    </a>
+  </div>
+
+  <div class="cards flex flex-wrap gap-10 px-10 mt-10">
+    <div class="card">
+      <div class="w-52 h-40 bg-zinc-200 rounded-lg overflow-hidden">
+        <img
+          class="w-full h-full object-cover"
+          src="https://plus.unsplash.com/premium_photo-1681426472026-60d4bf7b69a1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8YW5pbWF0ZWR8ZW58MHx8MHx8fDA%3D"
+          alt=""
+        />
+      </div>
+      <h3 class="text-xl font-semibold mt-3">All pins</h3>
+      <h5 class="text-sm font-medium opacity-60">28 Pins</h5>
+    </div>
+  </div>
+</div>
+<script>
+  document.querySelector("#uploadicon").addEventListener("click", function () {
+    document.querySelector("#uploadform input").click();
+  });
+
+  document
+    .querySelector("#uploadform input")
+    .addEventListener("change", function () {
+      document.querySelector("#uploadform").submit();
+    });
+</script>
+
+<% include ./partials/footer.ejs%>

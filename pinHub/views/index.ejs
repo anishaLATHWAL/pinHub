@@ -1,0 +1,41 @@
+<% include ./partials/header.ejs%>
+
+<div
+  class="w-full flex items-center justify-center h-screen bg-[url('https://images.unsplash.com/photo-1461360370896-922624d12aa1?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjR8fGltYWdlJTIwY29sbGVjdGlvbiUyMGJyb3dufGVufDB8fDB8fHww')] bg-center bg-cover"
+>
+  <div class="w-96 h-[60vh] bg-white px-10 py-10 rounded-[20px]">
+    <h1
+      class="text-3xl text-center text-zinc-700 font-semibold leading-none tracking-tighter capitalize"
+    >
+      Welcome to pin<span class="text-[#C38154]">Hub</span>
+    </h1>
+    <form action="/login" method="post">
+      <input
+        class="border-2 rounded-md block mt-10 w-full px-3 py-2"
+        type="text"
+        name="username"
+        placeholder="username"
+      />
+      <input
+        class="border-2 rounded-md block mt-3 w-full px-3 py-2"
+        type="password"
+        name="password"
+        placeholder="password"
+      />
+      <input
+        class="border-2 cursor-pointer rounded-full block mt-5 w-full px-3 py-2 bg-[#C38154] text-white rounded-full"
+        type="submit"
+        value="Login"
+      />
+      <a class="mt-2 font-semibold text-zinc-500 inline-block" href="#"
+        >Forgot password ?</a
+      >
+    </form>
+    <a
+      class="inline-block w-full mt-7 text-center text-sm font-semibold text-zinc-700"
+      href="/register"
+      >Don't have an account?
+    </a>
+  </div>
+</div>
+<% include ./partials/footer.ejs%>
